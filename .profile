@@ -37,14 +37,16 @@ case ${distro} in
 	# Install pacaur for packages
  	if [ $? -ne 0 ]
        	then
+		echo 'Installing pacaur'
 		pacman -Sy pacaur 
 	fi
 	# Arch User repository clone folder
 	if [ -z ${AURDEST:+} ]
 	then
-		if ! mkdir -m 777 /var/cache/pacaur 2>&1 /dev/null
+		mkdir -m 777 /var/cache/pacaur 2>&1 > /dev/null
+		if [ $? -eq 1 ]	
 		then
-			echo 'creating /var/cache/pauaur directory'
+			echo 'creating /var/cache/paucaur directory'
 			su -c 'mkdir -m 777 /var/cache/pacaur'
 		fi
 		AURDEST=/var/cache/pacaur
