@@ -1,5 +1,6 @@
 #! /bin/sh
 
+
 # Guess Linux Distribution Type 
 check_distro()
 {
@@ -21,27 +22,28 @@ then
 	export XDG_CONFIG_HOME
 fi 
 
+
 case ${distro} in 
 'manjaro'|'arch')
 	# makepkg environment variables
-	if [ -z ${BUILDDIR:+} ]
+	if [ -z ${builddir:+} ]
 	then
 		if [ ! -d /tmp/makepkg ] 
 		then
 			mkdir /tmp/makepkg
 		fi
-		BUILDDIR=/tmp/makepkg
-		export BUILDDIR
+		builddir=/tmp/makepkg
+		export builddir
 	fi
 	which pacaur 2>&1 > /dev/null 
-	# Install pacaur for packages
+	# install pacaur for packages
  	if [ $? -ne 0 ]
        	then
-		echo 'Installing pacaur'
-		pacman -Sy pacaur 
+		echo 'installing pacaur'
+		pacman -sy pacaur 
 	fi
-	# Arch User repository clone folder
-	if [ -z ${AURDEST:+} ]
+	# arch user repository clone folder
+	if [ -z ${aurdest:+} ]
 	then
 		mkdir -m 777 /var/cache/pacaur 2>&1 > /dev/null
 		if [ $? -eq 1 ]	
@@ -49,9 +51,22 @@ case ${distro} in
 			echo 'creating /var/cache/paucaur directory'
 			su -c 'mkdir -m 777 /var/cache/pacaur'
 		fi
-		AURDEST=/var/cache/pacaur
-		export AURDEST
+		aurdest=/var/cache/pacaur
+		export aurdest
 	fi
 	;;
 esac
+
+# Install NeoVim 
+if [ ! -x /usr/bin/nvim ]
+then
+	pacaur -S neovim
+fi
+
+# Set EDITOR variable
+if [ -z ${EDITOR:+} ] 
+then
+	EDITOR=/usr/bin/nvim
+	export EDITOR
+fi
 
