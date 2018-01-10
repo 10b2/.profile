@@ -1,4 +1,5 @@
-!(.profile|.config/profile/*)
+!.profile
+!.config/profile/
 doc/tags
 wiki/.git
 *.class
