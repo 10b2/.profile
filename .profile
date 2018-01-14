@@ -1,3 +1,4 @@
+#!/bin/sh
 
 #######################################
 #  
@@ -6,6 +7,8 @@
 #  Maintainer: Idigo Luwum
 #
 #######################################
+
+# Unset functions and nonlocal variable after use
 
 set -a
 
