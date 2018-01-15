@@ -24,7 +24,7 @@ XDG_CONFIG_HOME="${HOME}/.config"
 for conf in $(find ${XDG_CONFIG_HOME}/profile \
 	-path .git -prune \
 	\! \( -name 'util.sh' -o -name 'vars.sh' \) -type f); do
-        . ${conf}
+        . "${conf}"
 done
 
 main() {
