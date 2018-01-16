@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -a
-
 #######################################
 # Guess Posix Distribution Type 
 # Globals:
