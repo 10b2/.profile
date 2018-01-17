@@ -30,8 +30,7 @@ main() {
 
     case ${distro} in
     'manjaro'|'arch')
-        pacaur -Sc
-        pacaur -Syyu
+        :
         ;;
     esac
 }
