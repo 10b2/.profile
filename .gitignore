@@ -1,3 +1,4 @@
 /*
-!/.profile
-!/.config/profile/**
+!.gitignore
+!.profile
+!.config/profile/**
