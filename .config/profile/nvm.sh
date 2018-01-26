@@ -1,6 +1,8 @@
-#!/bin/sh
+if [ ! -d "${XDG_CONFIG_HOME}/nvm" ]; then
+    mkdir -p ${XDG_CONFIG_HOME}/nvm
+fi
 
-set_env_var "NVM_DIR" "$HOME/.nvm"
+set_env_var "NVM_DIR" "${XDG_CONFIG_HOME}/nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
