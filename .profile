@@ -15,6 +15,7 @@ set -a
 #######################################
 
 XDG_CONFIG_HOME="${HOME}/.config"
+XDG_DATA_HOME="${HOME}/.local/share"
 
 # Basic must be loaded first
 . "${XDG_CONFIG_HOME}/profile/util.sh"
