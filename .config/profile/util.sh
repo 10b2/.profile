@@ -41,6 +41,7 @@ default_shell() {
 # Returns:
 #   None
 #######################################
+
 set_env_var() {
     # uppercase the environment variable.
     local VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
@@ -57,10 +58,10 @@ set_env_var() {
 # Returns:
 #   None
 #######################################
+
 is_command() {
     command -v $1 >/dev/null 2>&1
 }
-
 
 #######################################
 # Determine the Operating System's Package Manager
