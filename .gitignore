@@ -4,3 +4,4 @@
 !.config
 .config/*
 !.config/profile
+!.config/zsh
