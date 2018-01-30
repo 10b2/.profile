@@ -19,6 +19,20 @@ guess_distro() {
 }
 
 #######################################
+# Print the name of the user's default shell as defined by /etc/passwd. 
+# Globals:
+#   None
+# Arguments:
+#   None:
+# Returns:
+#   None
+#######################################
+
+default_shell() {
+    cat /etc/passwd | grep -e "$USER" | sed -e 's/.*://g'
+}
+
+#######################################
 # Check for an environment variable and set it to <value> if and only if $1 does not exist.
 # Globals:
 # Arguments:
