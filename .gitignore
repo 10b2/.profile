@@ -5,3 +5,4 @@
 .config/*
 !.config/profile
 !.config/zsh
+.config/zsh/.zcompdump*
