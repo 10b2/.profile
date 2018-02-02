@@ -52,6 +52,13 @@
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  nvm
+  rvm
+  virtualenvwrapper
+  docker
+  tmux
+  zsh-completions
+  ssh-agent
 )
 
 source ${ZSH}/oh-my-zsh.sh
@@ -90,7 +97,7 @@ setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/luwum/.zshrc'
+zstyle :compinstall filename '${ZDOTDIR}/.zshrc'
 
 autoload -Uz compinit
 compinit
