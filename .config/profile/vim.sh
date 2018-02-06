@@ -1,2 +1,3 @@
-# Location of various userfiles, eg init.vim.
-set_env_var "VIM" "${XDG_CONFIG_HOME}/nvim"
+#Used to locate run time files.
+set_env_var "VIMRUNTIME" "${XDG_DATA_HOME}/nvim/runtime"
+
