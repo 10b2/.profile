@@ -8,4 +8,5 @@ if [ -z ${TMUX:-}; then
         tmux attach -t $USER
     else
         tmux new -s $USER
+    fi
 fi
