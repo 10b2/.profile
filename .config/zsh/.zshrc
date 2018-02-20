@@ -52,7 +52,6 @@
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  nvm
   rvm
   virtualenvwrapper
   docker
