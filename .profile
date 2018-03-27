@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck shell=sh
 
 #######################################
 #
@@ -15,25 +16,40 @@ set -a
 #######################################
 
 XDG_CONFIG_HOME="${HOME}/.config"
+
+# shellcheck disable=SC2034
 XDG_DATA_HOME="${HOME}/.local/share"
 
-# Basic must be loaded first
+# script utilities must be loaded first
+# shellcheck source=.config/profile/util.sh
 . "${XDG_CONFIG_HOME}/profile/util.sh"
+
+# shellcheck source=.config/profile/vars.sh
 . "${XDG_CONFIG_HOME}/profile/vars.sh"
-for conf in $(find "${XDG_CONFIG_HOME}/profile" -path "${XDG_CONFIG_HOME}/profile/.git" -prune \
-    -o \! \( -name util.sh -o -name vars.sh \) -type f); do
-    . "${conf}"
-done
+
+find "${XDG_CONFIG_HOME}/profile" -path "${XDG_CONFIG_HOME}/profile/.git" -prune \
+	-o \! \( -name util.sh -o -name vars.sh \) -type f \
+	-exec sh -c ". $(conf)" \;
 
 main() {
-    local distro=$(guess_distro)
-    local os=$(uname -s)
+	local distro
+	local os
 
-    case ${distro} in
-    'manjaro'|'arch')
-        :
-        ;;
-    esac
+	distro=$(guess_distro)
+	os=$(uname -s)
+
+	case ${os} in
+	'Linux')
+		case ${distro} in
+		'manjaro' | 'arch')
+			:
+			;;
+		esac
+		;;
+	'Darwin')
+		:
+		;;
+	esac
 }
 
 main
