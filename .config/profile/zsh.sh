@@ -1,5 +1,5 @@
 # ZSH startup/shutdown files
-set_env_var "ZDOTDIR" "${XDG_CONFIG_HOME}/zsh"
+set_env_var "ZDOTDIR" "${XDG_DATA_HOME}/zsh"
 
 # Location of OH-MY-ZSH
 set_env_var "ZSH" "${ZDOTDIR}/oh-my-zsh"
