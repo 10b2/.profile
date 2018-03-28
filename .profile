@@ -29,7 +29,7 @@ XDG_DATA_HOME="${HOME}/.local/share"
 
 find "${XDG_CONFIG_HOME}/profile" -path "${XDG_CONFIG_HOME}/profile/.git" -prune \
 	-o \! \( -name util.sh -o -name vars.sh \) -type f \
-	-exec sh -c ". $(conf)" \;
+	-exec sh -c '. "$1"' _ {} \;
 
 main() {
 	local distro
