@@ -28,7 +28,7 @@ guess_distro() {
 #   None
 #######################################
 
-default_shell() {
+default_user_shell() {
     < /etc/passwd grep -e "$USER" | sed -e 's/.*://g'
 }
 
