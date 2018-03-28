@@ -29,7 +29,7 @@ guess_distro() {
 #######################################
 
 default_shell() {
-    cat /etc/passwd | grep -e "$USER" | sed -e 's/.*://g'
+    < /etc/passwd grep -e "$USER" | sed -e 's/.*://g'
 }
 
 #######################################
