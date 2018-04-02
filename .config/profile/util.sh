@@ -12,7 +12,7 @@
 
 guess_distro() {
     if [ -r /etc/os-release ]; then
-        echo $(grep -e 'ID' -F /etc/os-release | sed s/.*=//g | tr -s '[:upper:]' '[:lower:]')
+        grep -e 'ID' -F /etc/os-release | sed s/.*=//g | tr -s '[:upper:]' '[:lower:]'
     else 
         echo "error reading file '/etc/os-release'."
     fi
@@ -60,7 +60,7 @@ set_env_var() {
 #######################################
 
 is_command() {
-    command -v $1 >/dev/null 2>&1
+    command -v "$1" >/dev/null 2>&1
 }
 
 #######################################
@@ -89,7 +89,7 @@ pkg_manager() {
 #######################################
 
 install_package() {
-    $(pkg_manager) $1
+    $(pkg_manager) "$1"
 }
 
 #######################################
