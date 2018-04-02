@@ -7,6 +7,6 @@ if [ -z "${TMUX:-}" ]; then
 	if [ -z "$(tmux has-session -t "${USER}")" ]; then
 		tmux attach -t "${USER}"
 	else
-		tmux new -s -A "${USER}"
+		tmux new -s "${USER}"
 	fi
 fi
