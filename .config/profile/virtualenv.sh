@@ -2,7 +2,6 @@
 
 set_env_var "WORKON_HOME" "${XDG_DATA_HOME}/virtualenvs"
 
-is_command "virtualenvwrapper.sh"
-if [ $? -eq 0 ]; then
+if is_command "virtualenvwrapper.sh"; then
     virtualenvwrapper.sh
 fi
