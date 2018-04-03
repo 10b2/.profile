@@ -27,9 +27,7 @@ XDG_DATA_HOME="${HOME}/.local/share"
 # shellcheck source=.config/profile/vars.sh
 . "${XDG_CONFIG_HOME}/profile/vars.sh"
 
-find "${XDG_CONFIG_HOME}/profile" -path "${XDG_CONFIG_HOME}/profile/.git" -prune \
-	-o \! \( -name util.sh -o -name vars.sh \) -type f \
-	-exec sh -c '. "$1"' _ {} \;
+load_extensions
 
 main() {
 	local distro
