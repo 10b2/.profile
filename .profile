@@ -30,9 +30,6 @@ XDG_DATA_HOME="${HOME}/.local/share"
 load_extensions
 
 main() {
-	local distro
-	local os
-
 	distro=$(guess_distro)
 	os=$(uname -s)
 
@@ -48,6 +45,8 @@ main() {
 		:
 		;;
 	esac
+        unset distro
+        unset os
 }
 
 main

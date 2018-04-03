@@ -61,10 +61,11 @@ default_user_shell() {
 
 set_env_var() {
     # uppercase the environment variable.
-    local VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
+    VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
     if [ -z ${1:+} ]; then
         export "${VAR}=$2"
     fi
+    unset VAR
 }
 
 #######################################
