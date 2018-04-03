@@ -34,6 +34,7 @@ load_extensions() {
     for file in $e_files; do
         . ${file}
     done
+    unset e_files
 }
 #######################################
 # Print the name of the user's default shell as defined by /etc/passwd. 
