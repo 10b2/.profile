@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 set_env_var "BASE16_SHELL" "${XDG_CONFIG_HOME}/base16-shell"
 
 if [ ! -d "${BASE16_SHELL}" ]; then

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 set_env_var "MODERNISH_HOME" "${XDG_DATA_HOME}/modernish"
 

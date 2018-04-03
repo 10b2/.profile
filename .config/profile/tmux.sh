@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 #  Location for TMUX PLUGIN MANAGER
 set_env_var "TMUX_PLUGIN_MANAGER_PATH" "${XDG_CONFIG_HOME}/tmux/plugins/tpm"
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # Where packages are built
 set_env_var "BUILDDIR" "/tmp/makepkg"
 
