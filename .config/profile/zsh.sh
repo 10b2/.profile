@@ -10,6 +10,3 @@ if ! [ -d "${ZPLUG_HOME}" ]; then
     git clone https://github.com/zplug/zplug --depth=1 --branch 2.4.2 "${ZPLUG_HOME}"
 fi
 
-#shellcheck source=${XDG_DATA_HOME}/zsh/zplug
-. "${ZPLUG_HOME}/init.zsh"
-
