@@ -32,7 +32,7 @@ load_extensions() {
             \! \( -name util.sh -o -name vars.sh \) -type f | \
             tr '\n' ' ')
     for file in $e_files; do
-        . ${file}
+        . "${file}"
     done
     unset e_files
 }

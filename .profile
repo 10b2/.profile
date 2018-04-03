@@ -11,25 +11,21 @@
 
 set -a
 
-#######################################
-#  Source files from XDG_CONFIG_HOME
-#######################################
-
-XDG_CONFIG_HOME="${HOME}/.config"
-
-# shellcheck disable=SC2034
-XDG_DATA_HOME="${HOME}/.local/share"
-
-# script utilities must be loaded first
-# shellcheck source=.config/profile/util.sh
-. "${XDG_CONFIG_HOME}/profile/util.sh"
-
-# shellcheck source=.config/profile/vars.sh
-. "${XDG_CONFIG_HOME}/profile/vars.sh"
-
-load_extensions
-
 main() {
+
+	XDG_CONFIG_HOME="${HOME}/.config"
+
+	XDG_DATA_HOME="${HOME}/.local/share"
+
+	# script utilities must be loaded first
+	# shellcheck source=.config/profile/util.sh
+	. "${XDG_CONFIG_HOME}/profile/util.sh"
+
+	# shellcheck source=.config/profile/vars.sh
+	. "${XDG_CONFIG_HOME}/profile/vars.sh"
+
+	load_extensions
+
 	distro=$(guess_distro)
 	os=$(uname -s)
 
@@ -45,8 +41,11 @@ main() {
 		:
 		;;
 	esac
-        unset distro
-        unset os
+        
+	unset distro
+	unset os
+
+	cd "$HOME" || return
 }
 
 main
