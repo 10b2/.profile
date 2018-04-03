@@ -29,7 +29,7 @@ guess_distro() {
 #######################################
 load_extensions() {
     e_files=$(find "${XDG_CONFIG_HOME}/profile"  \
-            -o \! \( -name util.sh -o -name vars.sh \) -type f | \
+            \! \( -name util.sh -o -name vars.sh \) -type f | \
             tr '\n' ' ')
     for file in $e_files; do
         . ${file}
