@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 #######################################
-# Guess Posix Distribution Type 
+# Guess Posix Distribution Type
 # Globals:
 #   None
 # Arguments:
@@ -11,11 +11,11 @@
 #######################################
 
 guess_distro() {
-    if [ -r /etc/os-release ]; then
-        grep -e 'ID' -F /etc/os-release | sed s/.*=//g | tr -s '[:upper:]' '[:lower:]'
-    else 
-        echo "error reading file '/etc/os-release'."
-    fi
+	if [ -r /etc/os-release ]; then
+		grep -e 'ID' -F /etc/os-release | sed s/.*=//g | tr -s '[:upper:]' '[:lower:]'
+	else
+		echo "error reading file '/etc/os-release'."
+	fi
 }
 
 #######################################
@@ -28,16 +28,16 @@ guess_distro() {
 #   None
 #######################################
 load_extensions() {
-    e_files=$(find "${XDG_CONFIG_HOME}/profile"  \
-            \! \( -name util.sh -o -name vars.sh \) -type f | \
-            tr '\n' ' ')
-    for file in $e_files; do
-        . "${file}"
-    done
-    unset e_files
+	e_files=$(find "${XDG_CONFIG_HOME}/profile" \
+		\! \( -name util.sh -o -name vars.sh \) -type f |
+		tr '\n' ' ')
+	for file in $e_files; do
+		. "${file}"
+	done
+	unset e_files
 }
 #######################################
-# Print the name of the user's default shell as defined by /etc/passwd. 
+# Print the name of the user's default shell as defined by /etc/passwd.
 # Globals:
 #   None
 # Arguments:
@@ -47,7 +47,7 @@ load_extensions() {
 #######################################
 
 default_user_shell() {
-    < /etc/passwd grep -e "$USER" | sed -e 's/.*://g'
+	grep </etc/passwd -e "$USER" | sed -e 's/.*://g'
 }
 
 #######################################
@@ -61,25 +61,25 @@ default_user_shell() {
 #######################################
 
 set_env_var() {
-    # uppercase the environment variable.
-    VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
-    if [ -z ${1:+} ]; then
-        export "${VAR}=$2"
-    fi
-    unset VAR
+	# uppercase the environment variable.
+	VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
+	if [ -z ${1:+} ]; then
+		export "${VAR}=$2"
+	fi
+	unset VAR
 }
 
 #######################################
-# Determine if command exists on the system.  
+# Determine if command exists on the system.
 # Globals:
 # Arguments:
-#   $1           - The command that is checked for existence. 
+#   $1           - The command that is checked for existence.
 # Returns:
 #   None
 #######################################
 
 is_command() {
-    command -v "$1" >/dev/null 2>&1
+	command -v "$1" >/dev/null 2>&1
 }
 
 #######################################
@@ -87,14 +87,14 @@ is_command() {
 # Globals:
 #   $pkg_manager - The distribution specific package manager
 # Arguments:
-#   None 
+#   None
 # Returns:
 #   None
 #######################################
 
 pkg_manager() {
-    #TODO Make portable
-    echo pacaur -S
+	#TODO Make portable
+	echo pacaur -S
 }
 
 #######################################
@@ -102,12 +102,11 @@ pkg_manager() {
 # Globals:
 #   $pkg_manager - The distribution specific package manager
 # Arguments:
-#   None 
+#   None
 # Returns:
 #   None
 #######################################
 
 install_package() {
-    $(pkg_manager) "$1"
+	$(pkg_manager) "$1"
 }
-
