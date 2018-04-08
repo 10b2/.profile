@@ -28,9 +28,10 @@ if ! zplug check; then
     zplug install
 fi
 
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'zplug/zplug' hook-build:'zplug --self-manage'
 zplug 'zsh-users/zsh-completions'
 zplug 'chrissicool/zsh-256color'
 zplug 'lukechilds/zsh-nvm'
+zplug 'robertaudi/tsm'
 zplug 'mafredri/zsh-async' from:'github'
-zplug 'sindresorhus/pure', use:"pure.zsh", from:'github', as:"theme"
+zplug 'sindresorhus/pure' use:'pure.zsh' from:'github' as:'theme'
