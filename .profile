@@ -15,7 +15,11 @@ main() {
 
 	XDG_CONFIG_HOME="${HOME}/.config"
 
+        #shellcheck disable=2034
 	XDG_DATA_HOME="${HOME}/.local/share"
+
+        #shellcheck disable=2034
+        XDG_BIN_HOME="${HOME}/.local/bin"
 
 	# script utilities must be loaded first
 	# shellcheck source=.config/profile/util.sh
