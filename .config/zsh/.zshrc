@@ -13,9 +13,3 @@
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '${ZDOTDIR}/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
