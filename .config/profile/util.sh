@@ -12,7 +12,7 @@
 
 guess_distro() {
 	if [ -r /etc/os-release ]; then
-		grep -e 'ID' -F /etc/os-release | sed s/.*=//g | tr -s '[:upper:]' '[:lower:]'
+		grep -e 'ID' -F /etc/os-release | sed 's/.*=//g' | tr -s '[:upper:]' '[:lower:]'
 	else
 		echo "error reading file '/etc/os-release'."
 	fi
