@@ -29,12 +29,12 @@ guess_distro() {
 #######################################
 load_extensions() {
 	e_files=$(find "${XDG_CONFIG_HOME}/profile" \
-		\! \( -name util.sh -o -name vars.sh \) -type f |
-		tr '\n' ' ')
-	for file in $e_files; do
-		. "${file}"
-	done
-	unset e_files
+		\! \( -name util.sh -o -name vars.sh \) -type f )
+        #shellcheck disable=SC2116
+        for file in $(echo "${e_files}"); do
+                . "${file}"
+        done
+        unset e_files
 }
 #######################################
 # Print the name of the user's default shell as defined by /etc/passwd.
