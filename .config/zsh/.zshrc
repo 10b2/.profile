@@ -13,3 +13,28 @@
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' add-space true
+zstyle ':completion:*' auto-description '%d'
+zstyle ':completion:*' completer _list _oldlist _expand _complete _correct _approximate _prefix
+zstyle ':completion:*' completions 1
+zstyle ':completion:*' condition 0
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*' format '%d:'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-/]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' max-errors 3 numeric
+zstyle ':completion:*' original true
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' prompt '%e Possible Errors'
+zstyle ':completion:*' use-compctl true
+zstyle :compinstall filename '/home/luwum/.config/zsh/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
