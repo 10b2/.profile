@@ -19,22 +19,8 @@ set_env_var "HISTFILE" "${XDG_DATA_HOME}/zsh/.histfile"
 set_env_var "HISTSIZE" "10000"
 
 # The maximum number of history events to save in the history file.
-save_env_var "SAVEHIST" "10000"
+set_env_var "SAVEHIST" "10000"
 
 if ! [ -d "${ZPLUG_HOME}" ]; then
     git clone https://github.com/zplug/zplug --depth=1 --branch 2.4.2 "${ZPLUG_HOME}"
 fi
-
-. "${ZPLUG_HOME}/init.zsh" 
-
-if ! zplug check; then
-    zplug install
-fi
-
-zplug "zplug/zplug" hook-build:"zplug --self-manage"
-zplug "zsh-users/zsh-completions"
-zplug "chrissicool/zsh-256color"
-zplug "lukechilds/zsh-nvm"
-zplug "robertaudi/tsm"
-zplug "mafredri/zsh-async" from:"github"
-zplug "sindresorhus/pure" use:"pure.zsh" from:"github" as:"theme"

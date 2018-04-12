@@ -1,6 +1,7 @@
 /*
 !.gitignore
 !.profile
+!.zprofile
 !.config
 .config/*
 !.config/profile
