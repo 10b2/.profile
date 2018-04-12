@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # ZSH startup/shutdown files
 set_env_var "ZDOTDIR" "${XDG_CONFIG_HOME}/zsh"
