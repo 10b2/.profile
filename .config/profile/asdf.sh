@@ -7,5 +7,5 @@ if [ ! -d "${XDG_DATA_HOME}/asdf" ]; then
     git clone https://github.com/asdf-vm/asdf.git "${XDG_DATA_HOME}/asdf" --branch v0.4.3
 fi
 
-. "${XDG_DATA_HOME}/asdf.sh"
+. "${XDG_DATA_HOME}/asdf/asdf.sh"
 
