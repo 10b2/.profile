@@ -41,12 +41,15 @@ compinit
 
 . "${ZPLUG_HOME}/init.zsh" 
 
-if ! zplug check; then
-    zplug install
+if ! zplug check --verbose; then
+    printf "Install zplug plugins? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
-zplug "zplug/zplug" hook-build:"zplug --self-manage"
-zplug "sindresorhus/pure" use:"pure.zsh" from:"github" as:"theme"
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+zplug "sindresorhus/pure", use:"pure.zsh" from:"github" as:"theme"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "chrissicool/zsh-256color"
@@ -54,3 +57,5 @@ zplug "lukechilds/zsh-nvm"
 zplug "robertaudi/tsm"
 zplug "mafredri/zsh-async" from:"github"
 zplug "zsh-users/zsh-syntax-highlighting"
+
+zplug load
