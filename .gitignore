@@ -8,3 +8,4 @@
 !.config/zsh
 .config/zsh/.zcompdump*
 .config/zsh/oh-my-zsh
+.config/zsh/plugins
