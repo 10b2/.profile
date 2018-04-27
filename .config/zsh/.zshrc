@@ -55,6 +55,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "chrissicool/zsh-256color"
 zplug "asdf-vm/asdf", use:"asdf.sh", from:"github", as:"plugin"
+zplug "plugins/fasd", from:"oh-my-zsh"
 zplug "robertaudi/tsm"
 zplug "zsh-users/zsh-syntax-highlighting"
 
