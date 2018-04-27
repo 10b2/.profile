@@ -54,7 +54,7 @@ zplug "sindresorhus/pure", use:"pure.zsh", from:"github", as:"theme"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "chrissicool/zsh-256color"
-zplug "lukechilds/zsh-nvm"
+zplug "asdf-vm/asdf", use:"asdf.sh", from:"github", as:"plugin"
 zplug "robertaudi/tsm"
 zplug "zsh-users/zsh-syntax-highlighting"
 
