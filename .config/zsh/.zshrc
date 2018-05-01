@@ -57,6 +57,7 @@ zplug "chrissicool/zsh-256color"
 zplug "chriskempson/base16-shell", from:"github", as:"plugin"
 zplug "asdf-vm/asdf", use:"asdf.sh", from:"github", as:"plugin" 
 zplug "plugins/fasd", from:"oh-my-zsh"
+zplug "trapd00r/LS_COLORS", from:"github", as:"plugin"
 zplug "robertaudi/tsm"
 zplug "zsh-users/zsh-syntax-highlighting"
 
