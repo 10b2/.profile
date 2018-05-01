@@ -4,12 +4,18 @@
 if [ ! -L ~/.vimspectr_shell ]; then
     if [ -d "$XDG_DATA_HOME/nvim/plugged/vimspectr/shell" ]; then
         ln -s ~/.local/share/nvim/plugged/vimspectr/shell ~/.vimspectr-shell
+    for f in ~/.vimspectr-shell/*-*; do
+        ln -s "$f" "$( \
+            echo "$f.sh" | \
+            sed s#vimspectr-shell/#config/zsh/plugins/chriskempson/base16-shell/scripts/base16-#)"
+    done
     fi
 fi
 
 # Add color to `ls` command
-if [ -d "$ZPLUG_REPOS/trapd00r/LS_COLORS" ];then
-    . "$ZPLUG_REPOS/trapd00r/LS_COLORS/LS_COLORS"
+if [ ! -d "$ZPLUG_REPOS/trapd00r/LS_COLORS" ];then
+    git clone https://github.com/trapd00r/LS_COLORS "$ZPLUG_REPOS/trapd00r/LS_COLORS"
 fi
 
-[ -n "$PS1" ] && sh ~/.vimspectr-shell/vimspectr240-dark
+[ -n "$LS_COLORS" ] && eval "$( dircolors -b "$ZPLUG_REPOS/trapd00r/LS_COLORS/LS_COLORS" )"
+[ -n "$PS1" ] && . "~/.vimspectr-shell/vimspectr240-dark" 
