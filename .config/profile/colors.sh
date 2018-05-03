@@ -13,9 +13,9 @@ if [ ! -L ~/.vimspectr_shell ]; then
 fi
 
 # Add color to `ls` command
-if [ ! -d "${ZPLUG_REPOS}/trapd00r/LS_COLORS" ];then
-    git clone https://github.com/trapd00r/LS_COLORS "${ZPLUG_REPOS}/trapd00r/LS_COLORS"
+if [ ! -d "$XDG_DATA_HOME/LS_COLORS" ];then
+    git clone https://github.com/trapd00r/LS_COLORS "$XDG_DATA_HOME/LS_COLORS" 
+    ln -s ~/.dir_colors "$XDG_DATA_HOME/LS_COLORS/LS_COLORS"
 fi
 
-[ -n "$LS_COLORS" ] && eval "$( dircolors -b "${ZPLUG_REPOS}/trapd00r/LS_COLORS/LS_COLORS" )"
 [ -n "$PS1" ] && . "$HOME/.vimspectr-shell/vimspectr240-dark" 
