@@ -21,13 +21,6 @@ main() {
         #shellcheck disable=2034
         XDG_BIN_HOME="${HOME}/.local/bin"
 
-	# script utilities must be loaded first
-	# shellcheck source=.config/profile/util.sh
-	. "${XDG_CONFIG_HOME}/profile/util.sh"
-
-	# shellcheck source=.config/profile/vars.sh
-	. "${XDG_CONFIG_HOME}/profile/vars.sh"
-
 	load_extensions
 
 	distro=$(guess_distro)
