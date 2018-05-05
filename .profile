@@ -20,6 +20,8 @@ main() {
 
         #shellcheck disable=2034
         XDG_BIN_HOME="${HOME}/.local/bin"
+        
+        . "${XDG_CONFIG_HOME}/profile/00-util.sh"
 
 	load_extensions
 
@@ -42,7 +44,6 @@ main() {
 	unset distro
 	unset os
 
-	cd "$HOME" || return
 }
 
 main

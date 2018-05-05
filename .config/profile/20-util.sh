@@ -28,7 +28,7 @@ guess_distro() {
 #   None
 #######################################
 load_extensions() {
-	e_files=$(find "${XDG_CONFIG_HOME}/profile" -type f )
+	e_files=$(find "${XDG_CONFIG_HOME}/profile" -type f | sort -n )
         #shellcheck disable=SC2116
         for file in $(echo "${e_files}"); do
                 . "${file}"

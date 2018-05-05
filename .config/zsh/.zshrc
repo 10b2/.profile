@@ -62,9 +62,3 @@ zplug "robertaudi/tsm"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug load
-
-if [ -r "$HOME/.vimspectr-shell/vimspectr240-dark" ]; then
-    . "$HOME/.vimspectr-shell/vimspectr240-dark" 
-fi
-
-cd "$HOME" || exit 0
