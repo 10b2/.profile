@@ -10,7 +10,7 @@ set_env_var "ZPLUG_HOME" "${XDG_DATA_HOME}/zplug"
 set_env_var "ZPLUG_BIN" "${XDG_BIN_HOME}"
 
 # Location of downloaded zplug repos
-set_env_var "ZPLUG_REPOS" "${ZDOTDIR}/plugins"
+set_env_var "ZPLUG_REPOS" "${ZPLUG_HOME}/repos"
 
 # The file to save the history in when an interactive shell exits.
 set_env_var "HISTFILE" "${XDG_DATA_HOME}/zsh/.histfile"
