@@ -4,4 +4,4 @@
 set_env_var "BUILDDIR" "/tmp/makepkg"
 
 # Where to clone package build files
-set_env_var "AURDEST" "/var/cache/pacaur"
+set_env_var "AURDEST" "/var/cache/aur"
