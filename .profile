@@ -20,7 +20,11 @@ main() {
 
         #shellcheck disable=2034
         XDG_BIN_HOME="${HOME}/.local/bin"
+
+        #shellcheck disable=2034
+        XDG_CACHE_HOME="${HOME}/.local/cache"
         
+        #shellcheck disable=1090
         . "${XDG_CONFIG_HOME}/profile/00-util.sh"
 
 	load_extensions
