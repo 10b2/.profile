@@ -58,7 +58,12 @@ zplug "chriskempson/base16-shell", from:"github", as:"plugin"
 zplug "asdf-vm/asdf", use:"asdf.sh", from:"github", as:"plugin" 
 zplug "plugins/fasd", from:"oh-my-zsh"
 zplug "plugins/fancy-ctrl-z", from:"oh-my-zsh"
+zplug "plugins/git", from:"oh-my-zsh"
 zplug "robertaudi/tsm"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug load
+
+alias -g ls='exa --group-directories-first'
+alias -g ll='ls -l'
+alias -g la='ll -a'
