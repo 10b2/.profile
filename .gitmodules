@@ -1,3 +1,4 @@
-[submodule "/home/luwum/.config/nvim"]
-	path = /home/luwum/.config/nvim
-	url = /home/luwum/.config/nvim
+[submodule "nvim"]
+    path = .config/nvim
+    url = git://gitlab.com/10b2/vim.git
+
