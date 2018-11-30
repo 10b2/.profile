@@ -2,10 +2,12 @@
 !.gitignore
 !.profile
 !.zprofile
+!.zshrc
 !.config
 .config/*
 !.config/profile
 !.config/zsh
+!.config/zshrc
 .config/zsh/.zcompdump*
 .config/zsh/oh-my-zsh
 .config/zsh/plugins
