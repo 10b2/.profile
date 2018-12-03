@@ -5,6 +5,7 @@
 !.zshrc
 !.config
 .config/*
+!.config/tmux
 !.config/profile
 !.config/zsh
 !.config/zshrc
