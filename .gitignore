@@ -6,6 +6,7 @@
 !.config
 .config/*
 !.config/tmux
+!.config/nvim
 !.config/profile
 !.config/zsh
 !.config/zshrc
