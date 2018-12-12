@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+distribution=get_linix_distribution
+pkgmanager=get_packager_manager
+
 #######################################
 # Guess Posix Distribution Type
 # Globals:
@@ -10,10 +13,9 @@
 #   None
 #######################################
 
-guess_distro() {
+get_linix_distribution() {
 	if [ -r /etc/os-release ]; then
 		grep -e 'ID' -F /etc/os-release | sed 's/.*=//g' | tr -s '[:upper:]' '[:lower:]'
-	else
 		echo "error reading file '/etc/os-release'."
 	fi
 }
@@ -91,9 +93,28 @@ is_command() {
 #   None
 #######################################
 
-pkg_manager() {
-	#TODO Make portable
-	echo pacaur -S
+get_pkg_manager() {
+    case "$(uname -s)" in
+        'GNU/Linux')
+            case "$distribution" in
+                'arch|manjaro')
+                    echo pacman
+                    ;;
+                'fedora')
+                    echo dnf
+                    ;;
+                'ubuntu|debian')
+                    echo apt-get
+                    ;;
+                'opensuse')
+                    echo yast
+                    ;;
+            esac
+            ;;
+        'Darwin')
+                echo brew
+            ;;
+    esac
 }
 
 #######################################
@@ -107,5 +128,21 @@ pkg_manager() {
 #######################################
 
 install_package() {
-	$(pkg_manager) "$1"
+        if ! is_command "$1" ; then
+            case "$pkgmanager" in
+                'pacman' )
+                    pkgmanager="$pkgmanager -S"
+                    ;;
+                'dnf' )
+                    pkgmanager="$pkgmanager install"
+                    ;;
+                'apt-get' )
+                    pkgmanager="$pkgmanager install"
+                    ;;
+                'brew' )
+                    pkgmanager="$pkgmanager install"
+                    ;;
+            esac
+	    $(pkgmanager) "$1"
+        fi
 }
